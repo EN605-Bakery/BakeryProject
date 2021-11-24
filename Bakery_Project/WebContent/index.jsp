@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html style="font-size: 16px;">
   <head>
@@ -70,9 +72,9 @@
                     <p class="u-text u-text-4">Choclate, Vanilla &amp; Strawberry</p>
                     <h6  class="u-text u-text-palette-3-base u-text-5">$18.00</h6>
                      <h6 class="u-text u-text-4">Quantity Needed</h6>
-                    <input type="number" name="qtyCupCake" class="u-btn u-btn-rectangle u-button-style u-grey-10 u-btn-2"></input>
-                    <input type="hidden" name="typeCupCake" value="Assorted CupCakes" />
-                    <input type="hidden" name="typeCupCakePrice" value="18.00" />
+                    <input type="number" name="qty" class="u-btn u-btn-rectangle u-button-style u-grey-10 u-btn-2"></input>
+                    <input type="hidden" name="type" value="Assorted CupCakes" />
+                    <input type="hidden" name="typePrice" value="18.00" />
                   </div>
                 </div>
               </div>
@@ -86,9 +88,9 @@
                     <p class="u-text u-text-default u-text-7">Choclate Chip, Sugar, White Mcadanium Nuts</p>
                     <h6 class="u-text u-text-palette-3-base u-text-8">$15.00</h6>
                      <h6 class="u-text u-text-4">Quantity Needed</h6>
-                    <input type="number" name="qtyCookie" class="u-btn u-btn-rectangle u-button-style u-grey-10 u-btn-2"></input>
-                     <input type="hidden" name="typeCookie" value="Assorted Cookie" />
-                     <input type="hidden" name="typCookiePrice" value="15.00" />
+                    <input type="number" name="qty" class="u-btn u-btn-rectangle u-button-style u-grey-10 u-btn-2"></input>
+                     <input type="hidden" name="type" value="Assorted Cookie" />
+                     <input type="hidden" name="typPrice" value="15.00" />
                      
                   </div>
                 </div>
@@ -103,9 +105,9 @@
                     <p class="u-text u-text-default u-text-10">White, Wheat, Italian Herb &amp; Cheese</p>
                     <h6 class="u-text u-text-palette-3-base u-text-11">$25.00</h6>
                      <h6 class="u-text u-text-4">Quantity Needed</h6>
-                    <input type="number" name="qtyBread" class="u-btn u-btn-rectangle u-button-style u-grey-10 u-btn-2"></input>
-                    <input type="hidden" name="typeBread" value="BreadLoafs" />
-                     <input type="hidden" name="typeBreadPrice" value="25.00" />
+                    <input type="number" name="qty" class="u-btn u-btn-rectangle u-button-style u-grey-10 u-btn-2"></input>
+                    <input type="hidden" name="type" value="BreadLoafs" />
+                     <input type="hidden" name="typePrice" value="25.00" />
                   </div>
                 </div>
               </div>
@@ -119,9 +121,9 @@
                     <p class="u-text u-text-default u-text-13">Marble Flavour</p>
                     <h6 class="u-text u-text-palette-3-base u-text-14">$16.00</h6>
                      <h6 class="u-text u-text-4">Quantity Needed</h6>
-                    <input type="number" name="qtyPoundCake" class="u-btn u-btn-rectangle u-button-style u-grey-10 u-btn-2"></input>
-                     <input type="hidden" name="typePoundCake" value="Pound Cake" />
-                     <input type="hidden" name="typePoundCakePrice" value="16.00" />
+                    <input type="number" name="qty" class="u-btn u-btn-rectangle u-button-style u-grey-10 u-btn-2"></input>
+                     <input type="hidden" name="type" value="Pound Cake" />
+                     <input type="hidden" name="typePrice" value="16.00" />
                   </div>
                 </div>
               </div>
