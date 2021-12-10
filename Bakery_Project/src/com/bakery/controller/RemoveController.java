@@ -1,7 +1,7 @@
 package com.bakery.controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -16,16 +16,16 @@ import com.bakery.model.Order;
 import com.bakery.utils.HTMLTableGenerate;
 
 /**
- * Servlet implementation class OrderController
+ * Servlet implementation class RemoveController
  */
-@WebServlet(name = "Order", urlPatterns = { "/Order" })
-public class OrderController extends HttpServlet {
+@WebServlet(name = "Remove", urlPatterns = { "/Remove" })
+public class RemoveController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public OrderController() {
+    public RemoveController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -42,33 +42,24 @@ public class OrderController extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// Get the Required Params
-		List<Order> orderList = new ArrayList<Order>();
+		// TODO Auto-generated method stub
 		HttpSession session = request.getSession();
-		String[] quantity = request.getParameterValues("qty");
-		String[] type = request.getParameterValues("type");
-		String[] price = request.getParameterValues("typePrice");
-		
-		// Add the Parms to the List
-		int i = 0;
-		while (i < quantity.length) {
-			Order ordertoAdd = new Order();
-			ordertoAdd.setQuantity(Integer.parseInt(quantity[i]));
-			ordertoAdd.setPrice(price[i]);
-			ordertoAdd.setOrderType(type[i]);
-			orderList.add(ordertoAdd);
-			i++;
+		List<Order> orderList = (List<Order>) session.getAttribute("orders");
+		String url = "/addToCart.jsp";
+		String orderToRemove = request.getParameter("orderToRemove");
+		for (Iterator<Order> iterator = orderList.iterator(); iterator.hasNext();) {
+			Order value = iterator.next();
+			if (value.getOrderType().equalsIgnoreCase(orderToRemove)) {
+				iterator.remove();
+			}
 		}
-		
 		String orderToDisplay = HTMLTableGenerate.getHtmlTable(orderList);
-		
 		request.setAttribute("orderList", orderToDisplay);
 		session.setAttribute("orders", orderList);
 		RequestDispatcher dispatcher = getServletConfig().getServletContext()
-				.getRequestDispatcher("/addToCart.jsp");
+				.getRequestDispatcher(url);
 		dispatcher.forward(request, response);
-		
-		
+
 	}
 
 }

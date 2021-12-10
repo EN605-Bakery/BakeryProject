@@ -56,7 +56,6 @@
           </div>
         </nav>
       </div></header>
-    <form onsubmit="disableEmptyInputs(this)" id="myForm" action="Order" method="post">
     <section class="u-align-center u-clearfix u-grey-10 u-section-1" id="carousel_9166">
       <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
         <h1 class="u-custom-font u-font-oswald u-text u-text-default u-text-palette-3-base u-text-1">Cart Items</h1>
@@ -76,6 +75,5 @@
         </div>
       </div>
     </section>
-    </form>
   </body>
 </html>

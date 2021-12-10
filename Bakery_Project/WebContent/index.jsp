@@ -73,7 +73,7 @@
                     <h6  class="u-text u-text-palette-3-base u-text-5">$18.00</h6>
                      <h6 class="u-text u-text-4">Quantity Needed</h6>
                     <input type="number" name="qty" class="u-btn u-btn-rectangle u-button-style u-grey-10 u-btn-2"></input>
-                    <input type="hidden" name="type" value="Assorted CupCakes" />
+                    <input type="hidden" name="type" value="AssortedCupCakes" />
                     <input type="hidden" name="typePrice" value="18.00" />
                   </div>
                 </div>
@@ -89,8 +89,8 @@
                     <h6 class="u-text u-text-palette-3-base u-text-8">$15.00</h6>
                      <h6 class="u-text u-text-4">Quantity Needed</h6>
                     <input type="number" name="qty" class="u-btn u-btn-rectangle u-button-style u-grey-10 u-btn-2"></input>
-                     <input type="hidden" name="type" value="Assorted Cookie" />
-                     <input type="hidden" name="typPrice" value="15.00" />
+                     <input type="hidden" name="type" value="AssortedCookie" />
+                     <input type="hidden" name="typePrice" value="15.00" />
                      
                   </div>
                 </div>
@@ -122,7 +122,7 @@
                     <h6 class="u-text u-text-palette-3-base u-text-14">$16.00</h6>
                      <h6 class="u-text u-text-4">Quantity Needed</h6>
                     <input type="number" name="qty" class="u-btn u-btn-rectangle u-button-style u-grey-10 u-btn-2"></input>
-                     <input type="hidden" name="type" value="Pound Cake" />
+                     <input type="hidden" name="type" value="PoundCake" />
                      <input type="hidden" name="typePrice" value="16.00" />
                   </div>
                 </div>

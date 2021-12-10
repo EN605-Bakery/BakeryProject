@@ -38,6 +38,12 @@ public class HTMLTableGenerate {
 					htmlTable.append("<td>");
 					htmlTable.append(orderList.get(i).getPrice());
 					htmlTable.append("</td>");
+					htmlTable.append("<td>");
+					htmlTable.append("<form action=\"Remove\" method=\"post\">");
+					htmlTable.append("<input type=\"hidden\" name=\"orderToRemove\" value="+orderList.get(i).getOrderType()+">");
+					htmlTable.append("<input type=\"submit\" name=\"action\" value=\"Remove\">");
+					htmlTable.append("</form>");	
+					htmlTable.append("</td>");
 				htmlTable.append("</tr>");
 			 
 			}
