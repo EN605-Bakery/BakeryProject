@@ -58,23 +58,39 @@
       </div></header>
     <section class="u-align-center u-clearfix u-grey-10 u-section-1" id="carousel_9166">
       <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-        <h1 class="u-custom-font u-font-oswald u-text u-text-default u-text-palette-3-base u-text-1">Cart Items</h1>
-        <p class="u-text u-text-2"> Please Check the List Below, before proceeding to Checkout</p>
+        <h1 class="u-custom-font u-font-oswald u-text u-text-default u-text-palette-3-base u-text-1">Payment Details</h1>
+        <p class="u-text u-text-2"> Please Provide the Payment Details to Process Transaction</p>
          <div class="u-container-style u-list-item u-repeater-item u-white u-list-item-1">
               <div class="u-container-layout u-similar-container u-valign-top-lg u-valign-top-md u-valign-top-sm u-valign-top-xl u-container-layout-1">
-				${orderList}
+			<form id="CCForm" action="Registration" method=POST>
+			<br>
+			<br>
+			<fieldset>
+  				<legend>Payment Details</legend>
+				<p>
+					<label class="col-25" >Credit Card Type:</label> 
+						<input type="radio" name="cardType" value="Discover" required>Discover
+						<input type="radio" name="cardType" value="MasterCard"required>Master Card 
+						<input type="radio" name="cardType" value="Visa" required>Visa
+				</p>
+				<p>
+					<label class="col-25">Credit Card Number:</label> <input class="col-75" type="text" name="CCNumber" maxlength="16" required><br>
+				</p>
+				<p>
+					<label class="col-25">Expiration Date:</label> <input class="col-75" style="float:middle" type="month" name="month" required><br>
+				</p>
+			</fieldset>
+			</form>
 			</div>
 		</div>
         <br>
         <br>
-        <form id="" action="Payments" method=POST>
         <div style="align:center;">
         <input  type="image" name="submit" width="250" height="50" src="images/Checkout-Mod.png"
     		alt="Confirm Checkout">
   			<img alt="" width="10" height="10"
     		src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
         </div>
-        </form>
       </div>
     </section>
   </body>
