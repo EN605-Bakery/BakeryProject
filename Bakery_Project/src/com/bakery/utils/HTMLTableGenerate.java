@@ -6,7 +6,7 @@ import com.bakery.model.Order;
 
 public class HTMLTableGenerate {
 	
-	public static String getHtmlTable(List<Order> orderList) {
+	public static String getHtmlTable(List<Order> orderList, double total) {
 
 		StringBuilder htmlTable = new StringBuilder();
 	//	ResultSetMetaData metaData = results.getMetaData();
@@ -47,16 +47,16 @@ public class HTMLTableGenerate {
 				htmlTable.append("</tr>");
 			 
 			}
-		/**
+		
 		htmlTable.append("<tr>");
-		htmlTable.append("<td align = \"center\">");
+		htmlTable.append("<td align = \"right\">");
 		htmlTable.append("Total Cost");
 		htmlTable.append("</td>");
-		htmlTable.append("<td>");
-		htmlTable.append(user.getTotal());
+		htmlTable.append("<td align = \"right\">");
+		htmlTable.append("$"+total);
 		htmlTable.append("</td>");
 		htmlTable.append("<tr>");
-		*/
+		
 		htmlTable.append("</table>");
 		return htmlTable.toString();
 	}

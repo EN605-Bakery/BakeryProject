@@ -53,13 +53,28 @@ public class RemoveController extends HttpServlet {
 				iterator.remove();
 			}
 		}
-		String orderToDisplay = HTMLTableGenerate.getHtmlTable(orderList);
+		double total = calculateTotalPrice(orderList);
+		String orderToDisplay = HTMLTableGenerate.getHtmlTable(orderList, total);
 		request.setAttribute("orderList", orderToDisplay);
 		session.setAttribute("orders", orderList);
 		RequestDispatcher dispatcher = getServletConfig().getServletContext()
 				.getRequestDispatcher(url);
 		dispatcher.forward(request, response);
 
+	}
+	/**
+	 * Calculate the Total Price 
+	 * @param orderList
+	 * @return
+	 */
+	private double calculateTotalPrice(List<Order> orderList) {
+		int qtyTotal = 0;
+		int priceTotal = 0; ;
+		for(int i = 0; i < orderList.size(); i++ ) {
+			qtyTotal += orderList.get(i).getQuantity();
+			priceTotal += Double.parseDouble(orderList.get(i).getPrice());
+		}
+		return qtyTotal * priceTotal;
 	}
 
 }

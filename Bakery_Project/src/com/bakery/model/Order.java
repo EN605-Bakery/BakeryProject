@@ -35,5 +35,4 @@ public class Order {
 	public void setOrderType(String orderType) {
 		this.orderType = orderType;
 	}
-	
 }
