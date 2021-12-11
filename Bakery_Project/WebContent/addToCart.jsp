@@ -14,7 +14,8 @@
     <meta name="generator" content="Nicepage 3.30.0, nicepage.com">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
     <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700">
-    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
     
     <script type="application/ld+json">{
 		"@context": "http://schema.org",
@@ -27,39 +28,27 @@
     <meta property="og:title" content="Home">
     <meta property="og:type" content="website">
   </head>
-  <body class="u-body"><header class="u-clearfix u-header u-header" id="sec-fd7a"><div class="u-clearfix u-sheet u-sheet-1">
-        <a href="https://nicepage.com" class="u-image u-logo u-image-1">
-          <img src="images/default-logo.png" class="u-logo-image u-logo-image-1">
+  <body class="u-body"><header class="u-clearfix u-header u-header u-grey-10" id="sec-fd7a"><div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <div class="header-menu">
+        <a href="#" onclick="redirectLink('index.jsp')" class="u-image u-logo u-image-1">
+            <img src="images/bakery-logo.png" width="150" height="75px">
         </a>
-        <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
-          <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px;">
-            <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
-              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
-              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><symbol id="menu-hamburger" viewBox="0 0 16 16" style="width: 16px; height: 16px;"><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
-</symbol>
-</defs></svg>
-            </a>
-          </div>
-          <div class="u-custom-menu u-nav-container">
-            <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Home.html" style="padding: 10px 20px;">Home</a>
-</li></ul>
-          </div>
-          <div class="u-custom-menu u-nav-container-collapse">
-            <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
-              <div class="u-inner-container-layout u-sidenav-overflow">
-                <div class="u-menu-close"></div>
-                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.html" style="padding: 10px 20px;">Home</a>
-</li></ul>
-              </div>
-            </div>
-            <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
-          </div>
-        </nav>
-      </div></header>
+        <ul class="menu-bar">
+            <li><a href="#" onclick="redirectLink('index.jsp')"> Home</a></li>
+            <li><button class="dropbtn" onclick="myFunction()">Our Bakery
+                  <div class="dropdown-content" id="myDropdown">
+                      <a href="#" onclick="redirectLink('bakeryInfo.jsp#about')">About Us</a>
+                      <a href="#" onclick="redirectLink('bakeryInfo.jsp#contact')">Contact Us</a>
+                  </div>
+            </li>
+            <li><a href="#" onclick="redirectLink('index.jsp#myForm')">Shop</a></li>
+            <li><a href="/Order"><i class="material-icons">shopping_cart</i></a></li>
+        </ul>
+      </header>
     <section class="u-align-center u-clearfix u-grey-10 u-section-1" id="carousel_9166">
       <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
         <h1 class="u-custom-font u-font-oswald u-text u-text-default u-text-palette-3-base u-text-1">Cart Items</h1>
-        <p class="u-text u-text-2"> Please Check the List Below, before proceeding to Checkout</p>
+        <p class="u-text u-text-2"> Please check the list below, before proceeding to checkout</p>
          <div class="u-container-style u-list-item u-repeater-item u-white u-list-item-1">
               <div class="u-container-layout u-similar-container u-valign-top-lg u-valign-top-md u-valign-top-sm u-valign-top-xl u-container-layout-1">
 				${orderList}
@@ -69,10 +58,7 @@
         <br>
         <form id="" action="Payments" method=POST>
         <div style="align:center;">
-        <input  type="image" name="submit" width="250" height="50" src="images/Checkout-Mod.png"
-    		alt="Confirm Checkout">
-  			<img alt="" width="10" height="10"
-    		src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
+            <input  type="submit" value="Proceed to Payment" class="submitBtn" ${orders.size() > 0 ? '' : 'disabled'}>
         </div>
         </form>
       </div>

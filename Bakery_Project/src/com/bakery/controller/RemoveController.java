@@ -14,6 +14,7 @@ import javax.servlet.http.HttpSession;
 
 import com.bakery.model.Order;
 import com.bakery.utils.HTMLTableGenerate;
+import java.util.ArrayList;
 
 /**
  * Servlet implementation class RemoveController
@@ -44,7 +45,7 @@ public class RemoveController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession();
-		List<Order> orderList = (List<Order>) session.getAttribute("orders");
+		ArrayList<Order> orderList = (ArrayList<Order>) session.getAttribute("orders");
 		String url = "/addToCart.jsp";
 		String orderToRemove = request.getParameter("orderToRemove");
 		for (Iterator<Order> iterator = orderList.iterator(); iterator.hasNext();) {
@@ -55,7 +56,7 @@ public class RemoveController extends HttpServlet {
 		}
 		double total = calculateTotalPrice(orderList);
 		String orderToDisplay = HTMLTableGenerate.getHtmlTable(orderList, total);
-		request.setAttribute("orderList", orderToDisplay);
+		session.setAttribute("orderList", orderToDisplay);
 		session.setAttribute("orders", orderList);
 		RequestDispatcher dispatcher = getServletConfig().getServletContext()
 				.getRequestDispatcher(url);

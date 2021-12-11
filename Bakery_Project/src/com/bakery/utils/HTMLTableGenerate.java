@@ -3,12 +3,14 @@ package com.bakery.utils;
 import java.util.List;
 
 import com.bakery.model.Order;
+import java.text.DecimalFormat;
 
 public class HTMLTableGenerate {
 	
 	public static String getHtmlTable(List<Order> orderList, double total) {
 
 		StringBuilder htmlTable = new StringBuilder();
+                DecimalFormat df = new DecimalFormat("$0.00");
 	//	ResultSetMetaData metaData = results.getMetaData();
 
 		htmlTable.append("<table>");
@@ -19,7 +21,7 @@ public class HTMLTableGenerate {
 		htmlTable.append("Type");
 		htmlTable.append("</th>");
 		htmlTable.append("<th>");
-		htmlTable.append("Qunatity");
+		htmlTable.append("Quantity");
 		htmlTable.append("</th>");
 		htmlTable.append("<th>");
 		htmlTable.append("Price");
@@ -53,7 +55,7 @@ public class HTMLTableGenerate {
 		htmlTable.append("Total Cost");
 		htmlTable.append("</td>");
 		htmlTable.append("<td align = \"right\">");
-		htmlTable.append("$"+total);
+		htmlTable.append(df.format(total));
 		htmlTable.append("</td>");
 		htmlTable.append("<tr>");
 		

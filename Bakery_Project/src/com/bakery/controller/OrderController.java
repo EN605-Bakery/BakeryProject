@@ -35,7 +35,7 @@ public class OrderController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		this.doPost(request, response);
 	}
 
 	/**
@@ -51,20 +51,35 @@ public class OrderController extends HttpServlet {
 		
 		// Add the Parms to the List
 		int i = 0;
-		while (i < quantity.length) {
-			Order ordertoAdd = new Order();
-			ordertoAdd.setQuantity(Integer.parseInt(quantity[i]));
-			ordertoAdd.setPrice(price[i]);
-			ordertoAdd.setOrderType(type[i]);
-			orderList.add(ordertoAdd);
-			i++;
-		}
-		double total = calculateTotalPrice(orderList);
-		
-		String orderToDisplay = HTMLTableGenerate.getHtmlTable(orderList, total);
-		
-		request.setAttribute("orderList", orderToDisplay);
-		session.setAttribute("orders", orderList);
+                
+                if (quantity != null) {
+                    if (session.getAttribute("orders") != null) {
+                        for (int j = 0; j < ((ArrayList<Order>) session.getAttribute("orders")).size(); j++) {
+                            orderList.add(((ArrayList<Order>) session.getAttribute("orders")).get(j));
+                        }
+                    }
+                    
+                    
+                    while (i < quantity.length) {
+                            Order ordertoAdd = new Order();
+                            ordertoAdd.setQuantity(Integer.parseInt(quantity[i]));
+                            ordertoAdd.setPrice(price[i]);
+                            ordertoAdd.setOrderType(type[i]);
+                            orderList.add(ordertoAdd);
+                            
+                            i++;
+                            
+                            
+                    }
+                    
+                    double total = calculateTotalPrice(orderList);
+
+                    String orderToDisplay = HTMLTableGenerate.getHtmlTable(orderList, total);
+
+                    session.setAttribute("orderList", orderToDisplay);
+                    session.setAttribute("orders", orderList);
+                }
+                
 		RequestDispatcher dispatcher = getServletConfig().getServletContext()
 				.getRequestDispatcher("/addToCart.jsp");
 		dispatcher.forward(request, response);		
@@ -72,13 +87,13 @@ public class OrderController extends HttpServlet {
 	}
 
 	private double calculateTotalPrice(List<Order> orderList) {
-		int qtyTotal = 0;
+		int qty;
 		int priceTotal = 0; ;
 		for(int i = 0; i < orderList.size(); i++ ) {
-			qtyTotal += orderList.get(i).getQuantity();
-			priceTotal += Double.parseDouble(orderList.get(i).getPrice());
+			qty = orderList.get(i).getQuantity();
+			priceTotal += (Double.parseDouble(orderList.get(i).getPrice()) * qty);
 		}
-		return qtyTotal * priceTotal;
+		return priceTotal;
 	}
 
 }

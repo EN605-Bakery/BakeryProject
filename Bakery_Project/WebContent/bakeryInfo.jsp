@@ -45,40 +45,33 @@
             <li><a href="/Order"><i class="material-icons">shopping_cart</i></a></li>
         </ul>
       </header>
-    <section class="u-align-center u-clearfix u-grey-10 u-section-1" id="carousel_9166">
-      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-        <h1 class="u-custom-font u-font-oswald u-text u-text-default u-text-palette-3-base u-text-1">Payment Details</h1>
-        <p class="u-text u-text-2"> Please Provide the Payment Details to Process Transaction</p>
-         <div class="u-container-style u-list-item u-repeater-item u-white u-list-item-1">
-              <div class="u-container-layout u-similar-container u-valign-top-lg u-valign-top-md u-valign-top-sm u-valign-top-xl u-container-layout-1">
-			<form id="CCForm" action="Registration" method=POST>
-			<br>
-			<br>
-                        <fieldset>
-  				<legend>Contact Information</legend>
-                                <label for="name">Name:</label>
-                                <input type="text" name="name" id="name" value="${results.name}" required><br>
-                                <label for="email">Email:</label>
-                                <input type="email" name="email" id="email" value="${results.email}"required><br>
-			</fieldset>
-			<fieldset>
-  				<legend>Payment Details</legend>
-					<label class="col-25" >Credit Card Type:</label> 
-						<input type="radio" name="cardType" value="Discover" required>Discover
-						<input type="radio" name="cardType" value="MasterCard"required>Master Card 
-                                                <input type="radio" name="cardType" value="Visa" required>Visa<br>
-					<label class="col-25">Credit Card Number:</label> <input class="col-75" type="text" name="CCNumber" maxlength="16" required><br>
-					<label class="col-25">Expiration Date:</label> <input class="col-75" style="float:middle" type="month" name="month" required><br>
-			</fieldset>
-			</form>
-			</div>
-		</div>
+    <section class="u-align-center u-clearfix u-grey-10 u-section-2" id="about">
+      <div class="u-clearfix u-sheet u-align-left u-sheet-1">
+        <h1 class="u-custom-font u-font-oswald u-text u-text-default u-text-palette-3-base u-text-1">About Us</h1>
+        <p class="u-text u-text-2">Baked Right is a local family run bakery that 
+            specializes in provided freshly baked good assortments that are great for any event!
+            What started as a home side business has grown to a storefront meant to serve you delicious goods each and every day.
+            We regularly rotate out the flavors and selections that are provided, giving the customers fresh and exciting selections every few months.
+            We also offer full-service catering for any event, large or small. Contact us below for more information.</p>
+            <p>Baked Right was established in 2020 and is currently based in Baltimore, MD. </p>
         <br>
-        <br>
-        <div style="align:center;">
-            <input  type="submit" value="Checkout" class="submitBtn">
-        </div>
       </div>
     </section>
+    <section class="u-align-center u-clearfix u-grey-10 u-section-2" id="contact">
+      <div class="u-clearfix u-sheet u-align-left u-sheet-1">
+        <h1 class="u-custom-font u-font-oswald u-text u-text-default u-text-palette-3-base u-text-1">Contact Us</h1>
+        <p class="u-text u-text-2">If you have any questions or are interested in catering services for an event, fill out the contact form below.</p>
+        <form id="contact-form">
+            <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name"></p>
+            <p><input class="w3-input w3-padding-16" type="number" placeholder="How many people" required name="People"></p>
+            <p><input class="w3-input w3-padding-16" type="datetime-local" placeholder="Date and time" required name="date" id="contact-date" value="2020-11-16T20:00"></p>
+            <p><input class="w3-input w3-padding-16" type="email" placeholder="Email" required name="Email"></p>
+            <p><textarea class="w3-input w3-padding-16" type="text" placeholder="Message \ Special requirements" required name="Message"></textarea></p>
+            <p><button class="w3-button w3-light-grey w3-section" type="submit" class="submitBtn">Send Message</button></p>
+        </form>
+        <br>
+      </div>
+    </section>
+    </form>
   </body>
 </html>
