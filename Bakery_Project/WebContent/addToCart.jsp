@@ -49,11 +49,11 @@
       <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
         <h1 class="u-custom-font u-font-oswald u-text u-text-default u-text-palette-3-base u-text-1">Cart Items</h1>
         <p class="u-text u-text-2"> Please check the list below, before proceeding to checkout</p>
-         <div class="u-container-style u-list-item u-repeater-item u-white u-list-item-1">
-              <div class="u-container-layout u-similar-container u-valign-top-lg u-valign-top-md u-valign-top-sm u-valign-top-xl u-container-layout-1">
-				${orderList}
-			</div>
+            <div class="u-container-style u-list-item u-repeater-item u-white u-list-item-1">
+                <div class="u-container-layout u-similar-container u-valign-top-lg u-valign-top-md u-valign-top-sm u-valign-top-xl u-container-layout-1">
+                    ${orderList}
 		</div>
+            </div>
         <br>
         <br>
         <form id="" action="Payments" method=POST>

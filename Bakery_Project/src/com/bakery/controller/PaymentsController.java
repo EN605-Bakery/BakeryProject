@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.bakery.model.Order;
+import java.util.ArrayList;
 
 /**
  * Servlet implementation class PaymentsController
@@ -33,7 +34,7 @@ public class PaymentsController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		this.doPost(request, response);
 	}
 
 	/**
@@ -42,7 +43,7 @@ public class PaymentsController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession();
-		List<Order> orderList = (List<Order>) session.getAttribute("orders");
+		List<Order> orderList = (ArrayList<Order>) session.getAttribute("orders");
 		String url = "/payments.jsp";
 		session.setAttribute("orders", orderList);
 		RequestDispatcher dispatcher = getServletConfig().getServletContext()

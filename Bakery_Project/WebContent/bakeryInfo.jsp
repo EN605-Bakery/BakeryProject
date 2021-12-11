@@ -63,8 +63,6 @@
         <p class="u-text u-text-2">If you have any questions or are interested in catering services for an event, fill out the contact form below.</p>
         <form id="contact-form">
             <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name"></p>
-            <p><input class="w3-input w3-padding-16" type="number" placeholder="How many people" required name="People"></p>
-            <p><input class="w3-input w3-padding-16" type="datetime-local" placeholder="Date and time" required name="date" id="contact-date" value="2020-11-16T20:00"></p>
             <p><input class="w3-input w3-padding-16" type="email" placeholder="Email" required name="Email"></p>
             <p><textarea class="w3-input w3-padding-16" type="text" placeholder="Message \ Special requirements" required name="Message"></textarea></p>
             <p><button class="w3-button w3-light-grey w3-section" type="submit" class="submitBtn">Send Message</button></p>

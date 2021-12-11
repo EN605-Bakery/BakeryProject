@@ -45,40 +45,18 @@
             <li><a href="/Order"><i class="material-icons">shopping_cart</i></a></li>
         </ul>
       </header>
-    <section class="u-align-center u-clearfix u-grey-10 u-section-1" id="carousel_9166">
-      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-        <h1 class="u-custom-font u-font-oswald u-text u-text-default u-text-palette-3-base u-text-1">Payment Details</h1>
-        <p class="u-text u-text-2"> Please Provide the Payment Details to Process Transaction</p>
-         <div class="u-container-style u-list-item u-repeater-item u-white u-list-item-1">
-              <div class="u-container-layout u-similar-container u-valign-top-lg u-valign-top-md u-valign-top-sm u-valign-top-xl u-container-layout-1">
-			<form id="CCForm" action="Confirmation" method=POST>
-                            <br>
-                            <br>
-                            <fieldset>
-                                    <legend>Contact Information</legend>
-                                    <label for="name">Name:</label>
-                                    <input type="text" name="name" id="name" value="${results.name}" required><br>
-                                    <label for="email">Email:</label>
-                                    <input type="email" name="email" id="email" value="${results.email}"required><br>
-                            </fieldset>
-                            <fieldset>
-                                    <legend>Payment Details</legend>
-                                            <label class="col-25" >Credit Card Type:</label> 
-                                                    <input type="radio" name="cardType" value="Discover" required>Discover
-                                                    <input type="radio" name="cardType" value="MasterCard"required>Master Card 
-                                                    <input type="radio" name="cardType" value="Visa" required>Visa<br>
-                                            <label class="col-25">Credit Card Number:</label> <input class="col-75" type="text" name="CCNumber" maxlength="16" required><br>
-                                            <label class="col-25">Expiration Date:</label> <input class="col-75" style="float:middle" type="month" name="month" required><br>
-                            </fieldset>
-                            <div style="align:center;">
-                                <input  type="submit" value="Checkout" class="submitBtn">
-                            </div>
-			</form>
-			</div>
-		</div>
-        <br>
-        <br>
+    <section class="u-align-center u-clearfix u-grey-10 u-section-2" id="contact">
+      <div class="u-clearfix u-sheet u-align-left u-sheet-1">
+        <h1 class="u-custom-font u-font-oswald u-text u-text-default u-text-palette-3-base u-text-1">Order Receipt</h1>
+        <p class="u-text u-text-2">Thank you <b>${customerName}</b> for your purchase! Your order has been successfully submitted.</p>
+        <p class="u-text u-text-2">Your order receipt has been sent to your email: <b>${customerEmail}</b>. We will email you once your order is ready for pickup.</p>
+        <div class="u-container-style u-list-item u-repeater-item u-white u-list-item-1">
+            <div class="u-container-layout u-similar-container u-valign-top-lg u-valign-top-md u-valign-top-sm u-valign-top-xl u-container-layout-1">
+                ${orderList}
+            </div>
+        </div>
       </div>
     </section>
+    </form>
   </body>
 </html>

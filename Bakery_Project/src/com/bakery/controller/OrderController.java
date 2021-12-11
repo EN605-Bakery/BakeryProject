@@ -43,7 +43,7 @@ public class OrderController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// Get the Required Params
-		List<Order> orderList = new ArrayList<Order>();
+		ArrayList<Order> orderList = new ArrayList<Order>();
 		HttpSession session = request.getSession();
 		String[] quantity = request.getParameterValues("qty");
 		String[] type = request.getParameterValues("type");
