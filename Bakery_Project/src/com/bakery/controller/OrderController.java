@@ -75,10 +75,7 @@ public class OrderController extends HttpServlet {
                             ordertoAdd.setPrice(price[i]);
                             ordertoAdd.setOrderType(type[i]);
                             orderList.add(ordertoAdd);
-                            
                             i++;
-                            
-                            
                     }
                     
                     double total = calculateTotalPrice(orderList);
