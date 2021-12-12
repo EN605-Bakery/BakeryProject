@@ -95,7 +95,7 @@
                     <h6 class="u-text u-text-palette-3-base u-text-11">$16.00</h6>
                      <h6 class="u-text u-text-4">Quantity Needed (1 basket includes one of each bread type)</h6>
                      <input type="number" name="qty" class="u-btn u-btn-rectangle u-button-style u-grey-10 u-btn-2" min="1"></input>
-                    <input type="hidden" name="type" value="Bread Loaves" />
+                    <input type="hidden" name="type" value="BreadLoaves" />
                      <input type="hidden" name="typePrice" value="16.00" />
                   </div>
                 </div>

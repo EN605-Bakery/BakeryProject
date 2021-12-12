@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.bakery.model.Order;
+import com.bakery.utils.DBUtils;
 import com.bakery.utils.HTMLTableGenerate;
 
 /**
@@ -21,7 +23,14 @@ import com.bakery.utils.HTMLTableGenerate;
 @WebServlet(name = "Order", urlPatterns = { "/Order" })
 public class OrderController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+     
+	  @Override
+	  public void init(ServletConfig config) throws ServletException {
+		  
+		  super.init(config);
+		  DBUtils.initDB();
+	  }
+	
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -79,7 +88,6 @@ public class OrderController extends HttpServlet {
                     session.setAttribute("orderList", orderToDisplay);
                     session.setAttribute("orders", orderList);
                 }
-                
 		RequestDispatcher dispatcher = getServletConfig().getServletContext()
 				.getRequestDispatcher("/addToCart.jsp");
 		dispatcher.forward(request, response);		

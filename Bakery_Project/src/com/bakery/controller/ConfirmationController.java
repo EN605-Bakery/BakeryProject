@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.bakery.model.Order;
+import com.bakery.utils.DBUtils;
+
 import java.util.ArrayList;
 
 /**
@@ -45,8 +47,13 @@ public class ConfirmationController extends HttpServlet {
                 HttpSession session = request.getSession();
 		String name = request.getParameter("name");
 		String email = request.getParameter("email");
+		String cardType = request.getParameter("cardType");
+		String ccNum = request.getParameter("CCNumber");
+		String ccDate = request.getParameter("CCDate");
+		ArrayList<Order> orderList = (ArrayList<Order>) session.getAttribute("orders");
+		DBUtils.insertOrder(orderList, name, email, cardType, ccNum, ccDate);
 
-		ArrayList<Order> orderList = new ArrayList<Order>();
+		orderList = new ArrayList<Order>();
 		String url = "/confirmation.jsp";
 		session.setAttribute("orders", orderList);
                 session.setAttribute("customerName", name);

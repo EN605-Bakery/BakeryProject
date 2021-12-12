@@ -68,7 +68,7 @@
                                                     <input type="radio" name="cardType" value="MasterCard"required>Master Card 
                                                     <input type="radio" name="cardType" value="Visa" required>Visa<br>
                                             <label class="col-25">Credit Card Number:</label> <input class="col-75" type="text" name="CCNumber" maxlength="16" required><br>
-                                            <label class="col-25">Expiration Date:</label> <input class="col-75" style="float:middle" type="month" name="month" required><br>
+                                            <label class="col-25">Expiration Date:</label> <input class="col-75" style="float:middle" type="month" name="CCDate" required><br>
                             </fieldset>
                             <div style="align:center;">
                                 <input  type="submit" value="Checkout" class="submitBtn">
